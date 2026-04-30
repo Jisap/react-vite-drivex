@@ -3,6 +3,7 @@ import "./App.css"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from "react"
+import MainRoutes from "./routes/MainRoutes"
 
 
 
@@ -21,6 +22,7 @@ const App = () => {
   return (
     <>
       <Navbar className={"lg:flex hidden"} />
+      <MainRoutes />
     </>
   )
 }
