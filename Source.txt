@@ -1,0 +1,510 @@
+npm install tailwindcss @tailwindcss/vite
+npm install lucide-react
+npm install react-router-dom
+npm install swiper
+npm install @splidejs/react-splide
+npm install @splidejs/splide-extension-auto-scroll
+npm install aos
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #f0b001;
+    --color-heading: #18171a;
+    --color-gray-light: #f4f4f4;
+    --color-pera: #615f5c;
+
+    --font-barlow: "Barlow Condensed", sans-serif;
+}
+
+body {
+    font-family: "DM Sans", "Montserrat", sans-serif;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Barlow Condensed", sans-serif;
+    text-transform: capitalize;
+}
+
+p {
+    font-family: "DM Sans", sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    -webkit-scrollbar: none;
+}
+
+[data-aos="fade-center"] {
+  opacity: 0;
+  transform: scale(0.95); 
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-aos="fade-center"].aos-animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(40px) scale(0.95);
+  opacity: 0;
+}
+
+[data-aos="fade-up"].aos-animate {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility centered-row {
+    @apply flex items-center;
+}
+
+@utility centered-start {
+    @apply flex items-center;
+}
+
+@utility grid-col {
+    @apply grid grid-cols-1
+}
+
+@utility section-image {
+    @apply w-full h-full;
+}
+
+@utility content-col {
+    @apply flex flex-col;
+}
+
+@layer components {
+    .section {
+        @apply container px-4 mx-auto relative;
+    }
+
+    .section-container {
+        @apply flex justify-between items-center w-full lg:flex-row flex-col;
+    }
+
+    .sub-title {
+        @apply uppercase! font-bold tracking-wide text-[14px];
+    }
+
+    .heading-1 {
+        @apply text-4xl sm:text-5xl uppercase! font-bold tracking-wide;
+    }
+
+    .heading-2 {
+        @apply text-4xl sm:text-4xl uppercase! font-bold tracking-wide;
+    }
+
+    .btn-yellow {
+        @apply text-white border border-primary hover:bg-primary text-xl hover:text-black transition-colors duration-300;
+    }
+
+    .btn-white {
+        @apply border border-white text-white mt-10 hover:bg-white hover:text-black transition-colors duration-300 text-xl;
+    }
+
+    .btn-black {
+        @apply border border-black text-black hover:bg-black hover:text-white mt-10 transition-colors duration-300 text-xl;
+    }
+
+    .text-desc {
+        @apply font-light tracking-wide text-[1rem] md:text-[1.1rem];
+    }
+
+}
+
+// Nav Section
+
+export const MENU = [
+    {
+        id: "home",
+        label: "Home",
+        type: "link",
+        path: "/",
+    },
+
+    {
+        id: "about",
+        label: "About Us",
+        type: "link",
+        path: "/about",
+    },
+
+    {
+        id: "service",
+        label: "Service",
+        type: "link",
+        path: "/service",
+    },
+
+    {
+        id: "cars",
+        label: "Cars",
+        type: "dropdown",
+        children: [
+            {
+                id: "all-cars",
+                label: "Car List",
+                path: "/cars",
+            },
+            {
+                id: "car-type",
+                label: "Car Type",
+                path: "/carstype",
+            },
+            {
+                id: "single-car",
+                label: "Single Car",
+                path: "/cars/1",
+            },
+        ],
+    },
+    
+    {
+        id: "pages",
+        label: "Pages",
+        type: "dropdown",
+        children: [
+            {
+                id: "blog",
+                label: "Blog",
+                path: "/blog",
+            },
+            {
+                id: "pricing",
+                label: "Pricing",
+                path: "/pricing",
+            },
+            {
+                id: "imagegallery",
+                label: "Image Gallery",
+                path: "/imagegallery",
+            },
+            {
+                id: "testimonials",
+                label: "Testimonials",
+                path: "/testimonials",
+            },
+            {
+                id: "faqs",
+                label: "Faq's",
+                path: "/faqs",
+            },
+        ],
+    },
+
+    {
+        id: "contact",
+        label: "Contact",
+        type: "link",
+        path: "/contact",
+    },
+];
+
+// Hero Section
+
+Test Drive Your Dream Car
+Premium car detailing for every vehicle
+
+// About Section
+
+About Us
+Your trusted partner in reliable car rental
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ab voluptatibus voluptate modi culpa sed accusamus similique nam?
+
+Brake Check & Services
+
+Galley simply dummy text lorem Ipsum is of the printin k a of type and
+
+Online Appointment
+
+// Service Section
+
+Our Services
+Explore our wide range of rental services
+
+Discover our range of car rental services designed to meet all your travel needs. From a diverse fleet of vehicles to flexible rental plans.
+
+Enhance your rental experience with additional options.
+
+// Service Details
+
+We offer a wide range of car rental services designed to meet all your transportation needs. Whether you’re traveling for business, planning a family vacation, or need a reliable vehicle for a special event, we have the perfect solution for you.
+
+Discover premium rental services
+
+We offer a comprehensive range of car rental services designed to meet the diverse needs of our clients. Whether you’re traveling for business, planning a family vacation, or need a reliable vehicle for a special event, our fleet and services are tailored to provide you with the perfect solution. Discover the various services we offer and why we are the preferred choice for car rentals.
+
+Whether it’s daily wear or long-term neglect, our team brings back the original beauty of your car. From deep cleaning to advanced polishing, every step is handled with expertise and attention to detail.
+
+24/7 Roadside Assistance
+Free Cancellation & Return
+Rent Now Pay When You Arrive
+24/7 Roadside Assistance
+Free Cancellation & Return
+Rent Now Pay When You Arrive
+
+Our detailing service not only improves the visual appeal but also increases the lifespan of your vehicle’s paint and exterior components. We use eco-friendly products that are safe for both your car and the environment.
+
+Customer satisfaction is our top priority. We tailor our services based on your vehicle’s condition, ensuring the best possible results every time you visit us.
+
+Experience the difference with our expert detailing services and give your car the premium care it deserves. Book your appointment today and enjoy a flawless driving experience.
+
+Get in Touch
+Contact Info
+
+United Kingdom —
+221B Baker Street, Office 302 London, UK NW1 6XE
+
+info@email.com
++91 12345 67890
+
+// Service Categories Section
+
+const categories = [
+    { image: serviceImg1, title: "Sport Car" },
+    { image: serviceImg2, title: "Convertible Car" },
+    { image: serviceImg3, title: "Sedan Car" },
+    { image: serviceImg4, title: "Luxury Car" },
+];
+
+
+
+Car Dealer is the most enticing, creative, modern and multipurpose auto dealer Premium WordPress Theme. Suitable for any car dealer websites, business or corporate websites.
+
+
+
+// Blog Details
+
+Top tips for booking your car rental: what you need to know
+
+Renting a car can be an essential part of travel, offering flexibility and convenience for exploring new destinations or navigating daily life when your own vehicle isn’t available. Whether you’re planning a vacation, business trip, or just need a temporary ride.
+
+The first step in the car rental process is selecting a reputable company. Major rental agencies like Hertz, Enterprise, Avis, and Budget are known for their extensive networks and reliability. However, don’t overlook local rental companies, which can sometimes offer better rates or more personalized service. Always check reviews and compare prices online to find the best option for your needs.
+
+Renting a car opens up a world of possibilities, turning a simple journey into an adventure. It’s not just about getting from point A to point B it’s about the freedom to explore, the comfort of choice, and the ease of travel. Whether you’re discovering new cities.
+
+Before booking, ensure you meet the rental company’s requirements. Most agencies require drivers to be at least 21 years old, though some may have a minimum age of 25. Young drivers often face additional fees. A valid driver’s license and a credit card in the driver’s name are also essential. International travelers might need an International Driving Permit (IDP) in addition to their home country’s license.
+
+Understanding Rental Requirements
+Car rental agencies offer a range of vehicles, from compact cars to luxury SUVs. Consider your needs and budget when choosing. For city travel, a compact car is economical and easy to park. If you’re traveling with family or a group, an SUV or minivan may be more appropriate. Don’t forget to check for special deals or discounts, such as weekend specials or packages that include GPS or child seats.
+
+Opt for well-known rental agencies like Hertz, Enterprise, Avis, or local firms.
+
+Most rental companies require drivers to be at least 21, with some having a minimum age of 25.
+
+Read the agreement carefully, noting the rental period, mileage limits, fuel policy.
+
+Choose a vehicle that suits your needs and budget. Compact cars are while larger vehicles.
+
+Ensure your rental comes with unlimited mileage if you plan on long-distance travel.
+
+Insurance is a crucial aspect of car rental. Rental companies usually offer several coverage options, including Collision Damage Waiver (CDW), Theft Protection, and Third-Party Liability. Your personal car insurance or credit card may already cover rental cars, so check with your provider before purchasing additional coverage. It’s important to understand what is covered and any potential deductibles or exclusions.
+
+Tages:
+businesstravel
+carrental
+travel
+travelplanning
+
+Leave a Reply
+Your email address will not be published. Required fields are marked *
+
+
+
+// VISION COMPONENTS
+
+const tabsData = [
+        {
+            key: "vision",
+            title: "Our Vision",
+            heading: "Pioneering excellence in car rental services",
+            desc:
+                "We aim to continually innovate and integrate the latest technology into our services. From easy online bookings to advanced vehicle tracking systems, our goal is to make the car rental process seamless and efficient for our customers. Quality is at the heart of everything we do. We maintain a diverse fleet of well-maintained vehicles that meet the highest standards of safety and comfort.",
+            points: [
+                "Our customers are our top priority",
+                "Quality is at the heart of everything we do",
+                "Every vehicle leaves care looking its absolute best",
+            ],
+            image: vision,
+        },
+        {
+            key: "mission",
+            title: "Our Mission",
+            heading: "Delivering reliable and premium rental experience",
+            desc:
+                "We aim to continually innovate and integrate the latest technology into our services. From easy online bookings to advanced vehicle tracking systems, our goal is to make the car rental process seamless and efficient for our customers. Quality is at the heart of everything we do. We maintain a diverse fleet of well-maintained vehicles that meet the highest standards of safety and comfort.",
+            points: [
+                "Our customers are our top priority",
+                "Quality is at the heart of everything we do",
+                "Every vehicle leaves care looking its absolute best",
+            ],
+            image: mission,
+        },
+        {
+            key: "approach",
+            title: "Our Approach",
+            heading: "Smart solutions with modern technology",
+            desc:
+                "We aim to continually innovate and integrate the latest technology into our services. From easy online bookings to advanced vehicle tracking systems, our goal is to make the car rental process seamless and efficient for our customers. Quality is at the heart of everything we do. We maintain a diverse fleet of well-maintained vehicles that meet the highest standards of safety and comfort.",
+            points: [
+                "Our customers are our top priority",
+                "Quality is at the heart of everything we do",
+                "Every vehicle leaves care looking its absolute best",
+            ],
+            image: approach,
+        },
+];
+
+// TEAM COMPONENTS
+
+  Our Experienced Drivers
+
+Ensuring your safety and
+comfort on every journey
+
+
+const testimonials = [
+    {
+        id: 1,
+        text: "John is professionalism and attention to detail are outstanding. We felt safe and well-cared-for throughout our journey.",
+        name: "Casey Davis",
+        role: "Customer",
+    },
+    {
+        id: 2,
+        text: "Amazing service and smooth ride. Highly recommended!",
+        name: "Michael Lee",
+        role: "Customer",
+    },
+    {
+        id: 3,
+        text: "Very punctual and professional chauffeur experience.",
+        name: "Sarah Khan",
+        role: "Customer",
+    },
+];
+
+
+We pride ourselves on having a team of highly skilled and professional drivers dedicated to providing you with the best possible service. Here are some of the top drivers who make your journeys safe, comfortable, and enjoyable:
+
+John brings over 15 years of professional driving experience to our team. His extensive knowledge of the city, coupled with his impeccable driving skills, ensures that you reach your destination safely and on time. John is known for his punctuality and professionalism, making him a favorite among our corporate clients.
+
+We pride ourselves on having a team of highly skilled and professional drivers dedicated to providing you with the best possible service.
+
+// FAQ's Page
+
+export const faqs = [
+    {
+        title: "What types of vehicles are available for rent?",
+        content:
+            "Yes, we accept international driver's licenses. An additional government-issued ID, such as a passport, is also required.",
+    },
+    {
+        title: "Where are your rental locations?",
+        content:
+            "Yes, we accept international driver's licenses. An additional government-issued ID, such as a passport, is also required.",
+    },
+    {
+        title: "What are your hours of operation?",
+        content:
+            "Yes, we accept international driver's licenses. An additional government-issued ID, such as a passport, is also required.",
+    },
+    {
+        title: "How do I make a reservation?",
+        content:
+            "Yes, you can rent a car for someone else, but the primary driver must be present at the time of rental to provide their driver's license and sign the rental agreement.",
+    },
+    {
+        title: "Can I modify or cancel my reservation?",
+        content:
+            "Yes, you can rent a car for someone else, but the primary driver must be present at the time of rental to provide their driver's license and sign the rental agreement.",
+    },
+    {
+        title: "What is your cancellation policy?",
+        content:
+            "Yes, you can rent a car for someone else, but the primary driver must be present at the time of rental to provide their driver's license and sign the rental agreement.",
+    },
+    {
+        title: "What forms of payment do you accept?",
+        content:
+            "Reservations can be made online through our website, by calling our customer service hotline, or by visiting one of our rental locations in person.",
+    },
+    {
+        title: "Are there any hidden fees?",
+        content:
+            "Reservations can be made online through our website, by calling our customer service hotline, or by visiting one of our rental locations in person.",
+    },
+    {
+        title: "Do you require a deposit?",
+        content:
+            "Reservations can be made online through our website, by calling our customer service hotline, or by visiting one of our rental locations in person.",
+    },
+    {
+        title: "Are your vehicles insured?",
+        content:
+            "We offer a diverse fleet of vehicles, including economy cars, compact cars, SUVs, luxury cars, and more to suit various needs and preferences.",
+    },
+    {
+        title: "Do you offer vehicles with automatic transmission?",
+        content:
+            "We offer a diverse fleet of vehicles, including economy cars, compact cars, SUVs, luxury cars, and more to suit various needs and preferences.",
+    },
+    {
+        title: "Can I choose a specific vehicle model?",
+        content:
+            "We offer a diverse fleet of vehicles, including economy cars, compact cars, SUVs, luxury cars, and more to suit various needs and preferences.",
+    },
+];
+
+// Car Details
+
+export const faqs = [
+    {
+        title: "Driver's License Requirements",
+        content:
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+    },
+    {
+        title: "Insurance and Coverage policy",
+        content:
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+    },
+    {
+        title: "Available payment Methods",
+        content:
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+    },
+    {
+        title: "Cancellation and Modification policy",
+        content:
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+    },
+    {
+        title: "Smoking and Pet Policies",
+        content:
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+    },
+    {
+        title: "The minimum age Requirements",
+        content:
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal",
+    },
+];
+
+
+// Contact
+
+https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118106.58331783483!2d73.09068536311617!3d22.322240635404626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc8ab91a3ddab%3A0xac39d3bfe1473fb8!2sVadodara%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1774867903691!5m2!1sen!2sin

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #f0b001;
+    --color-heading: #18171a;
+    --color-gray-light: #f4f4f4;
+    --color-pera: #615f5c;
+
+    --font-barlow: "Barlow Condensed", sans-serif;
+}
+
+body {
+    font-family: "DM Sans", "Montserrat", sans-serif;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Barlow Condensed", sans-serif;
+    text-transform: capitalize;
+}
+
+p {
+    font-family: "DM Sans", sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    -webkit-scrollbar: none;
+}
+
+[data-aos="fade-center"] {
+  opacity: 0;
+  transform: scale(0.95); 
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-aos="fade-center"].aos-animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(40px) scale(0.95);
+  opacity: 0;
+}
+
+[data-aos="fade-up"].aos-animate {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility centered-row {
+    @apply flex items-center;
+}
+
+@utility centered-start {
+    @apply flex items-center;
+}
+
+@utility grid-col {
+    @apply grid grid-cols-1
+}
+
+@utility section-image {
+    @apply w-full h-full;
+}
+
+@utility content-col {
+    @apply flex flex-col;
+}
+
+@layer components {
+    .section {
+        @apply container px-4 mx-auto relative;
+    }
+
+    .section-container {
+        @apply flex justify-between items-center w-full lg:flex-row flex-col;
+    }
+
+    .sub-title {
+        @apply uppercase! font-bold tracking-wide text-[14px];
+    }
+
+    .heading-1 {
+        @apply text-4xl sm:text-5xl uppercase! font-bold tracking-wide;
+    }
+
+    .heading-2 {
+        @apply text-4xl sm:text-4xl uppercase! font-bold tracking-wide;
+    }
+
+    .btn-yellow {
+        @apply text-white border border-primary hover:bg-primary text-xl hover:text-black transition-colors duration-300;
+    }
+
+    .btn-white {
+        @apply border border-white text-white mt-10 hover:bg-white hover:text-black transition-colors duration-300 text-xl;
+    }
+
+    .btn-black {
+        @apply border border-black text-black hover:bg-black hover:text-white mt-10 transition-colors duration-300 text-xl;
+    }
+
+    .text-desc {
+        @apply font-light tracking-wide text-[1rem] md:text-[1.1rem];
+    }
+
+}
