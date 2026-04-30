@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom'
 import Logo from './Logo'
 import NavMenu from './NavMenu'
 import Button from '../../shared/components/Button'
+import { Menu } from 'lucide-react'
+import MobileMenu from './MobileMenu'
+import { useState } from 'react'
 
 const Navbar = () => {
+
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <div className={`fixed top-0 left-0 right-0 w-full z-999 border-b border-gray-50/10 transition-all duration-300 bg-black`}>
@@ -35,7 +41,21 @@ const Navbar = () => {
               data-aos-delay="600"
             />
           </div>
+
+          <div
+            className='text-white block lg:hidden cursor-pointer'
+            onClick={() => setOpen(!open)}
+          >
+            <Menu />
+          </div>
         </nav>
+
+        <ul className={`
+          block lg:hidden overflow-hidden transition-all duration-500 bg-black
+          ${open ? "max-h-125 opacity-100" : "max-h-0 opacity-0"}
+        `}>
+          <MobileMenu className={`block lg:hidden`} />
+        </ul>
       </div>
     </>
   )
