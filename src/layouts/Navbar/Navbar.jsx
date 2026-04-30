@@ -15,6 +15,16 @@ const Navbar = () => {
 
             <NavMenu />
           </div>
+
+          <div className='lg:centered-row gap-10 hidden'>
+            <p
+              className='text-white text-2xl font-barlow! font-medium tracking-wide'
+              data-aos="fade-center"
+              data-aos-delay="500"
+            >
+              1 (555) 123-4567
+            </p>
+          </div>
         </nav>
       </div>
     </>
