@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
 import NavMenu from './NavMenu'
+import Button from '../../shared/components/Button'
 
 const Navbar = () => {
   return (
@@ -18,12 +19,21 @@ const Navbar = () => {
 
           <div className='lg:centered-row gap-10 hidden'>
             <p
-              className='text-white text-2xl font-barlow! font-medium tracking-wide'
+              className='text-white text-2xl !font-barlow font-medium tracking-wide'
               data-aos="fade-center"
               data-aos-delay="500"
             >
               1 (555) 123-4567
             </p>
+
+            <Button
+              type="link"
+              to="/contact"
+              text={"Get A Quote"}
+              className='btn-yellow'
+              data-aos="fade-center"
+              data-aos-delay="600"
+            />
           </div>
         </nav>
       </div>

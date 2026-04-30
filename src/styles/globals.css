@@ -36,25 +36,25 @@ p {
 }
 
 [data-aos="fade-center"] {
-  opacity: 0;
-  transform: scale(0.95); 
-  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 [data-aos="fade-center"].aos-animate {
-  opacity: 1;
-  transform: scale(1);
+    opacity: 1;
+    transform: scale(1);
 }
 
 [data-aos="fade-up"] {
-  transform: translateY(40px) scale(0.95);
-  opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    opacity: 0;
 }
 
 [data-aos="fade-up"].aos-animate {
-  transform: translateY(0) scale(1);
-  opacity: 1;
-  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @utility centered-row {
@@ -87,27 +87,30 @@ p {
     }
 
     .sub-title {
-        @apply uppercase! font-bold tracking-wide text-[14px];
+        @apply uppercase font-bold tracking-wide text-[14px];
     }
 
     .heading-1 {
-        @apply text-4xl sm:text-5xl uppercase! font-bold tracking-wide;
+        @apply text-4xl sm:text-5xl uppercase font-bold tracking-wide;
     }
 
     .heading-2 {
-        @apply text-4xl sm:text-4xl uppercase! font-bold tracking-wide;
+        @apply text-4xl sm:text-4xl uppercase font-bold tracking-wide;
     }
 
     .btn-yellow {
-        @apply text-white border border-primary hover:bg-primary text-xl hover:text-black transition-colors duration-300;
+        @apply text-white border border-primary hover:bg-primary text-xl hover:text-black bg-transparent;
+        transition: all 500ms ease-in-out !important;
     }
 
     .btn-white {
-        @apply border border-white text-white mt-10 hover:bg-white hover:text-black transition-colors duration-300 text-xl;
+        @apply border border-white text-white mt-10 hover:bg-white hover:text-black bg-transparent text-xl;
+        transition: all 500ms ease-in-out !important;
     }
 
     .btn-black {
-        @apply border border-black text-black hover:bg-black hover:text-white mt-10 transition-colors duration-300 text-xl;
+        @apply border border-black text-black hover:bg-black hover:text-white mt-10 bg-transparent text-xl;
+        transition: all 500ms ease-in-out !important;
     }
 
     .text-desc {
