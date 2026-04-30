@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar className={"lg:flex hidden"} />
     </>
   )
 }

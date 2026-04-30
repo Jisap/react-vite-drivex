@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
+import NavMenu from './NavMenu'
 
 const Navbar = () => {
   return (
@@ -11,6 +12,8 @@ const Navbar = () => {
             <Link to="/" data-aos="fade-center" data-aos-delay="100">
               <Logo />
             </Link>
+
+            <NavMenu />
           </div>
         </nav>
       </div>
