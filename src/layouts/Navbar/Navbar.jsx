@@ -5,15 +5,29 @@ import NavMenu from './NavMenu'
 import Button from '../../shared/components/Button'
 import { Menu } from 'lucide-react'
 import MobileMenu from './MobileMenu'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Navbar = () => {
 
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 100)
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <div className={`fixed top-0 left-0 right-0 w-full z-999 border-b border-gray-50/10 transition-all duration-300 bg-black`}>
+      <div className={`
+        fixed top-0 left-0 right-0 w-full z-999 border-b border-gray-50/10 transition-all duration-300 bg-black
+        ${scrolled ? "bg-black shadow-lg" : "bg-transparent shadow-none"}  
+      `}>
         <nav className='relative container mx-auto px-4 py-5 centered-row justify-between'>
           <div className='centered-row gap-10 relative'>
             <Link to="/" data-aos="fade-center" data-aos-delay="100">
@@ -25,7 +39,7 @@ const Navbar = () => {
 
           <div className='lg:centered-row gap-10 hidden'>
             <p
-              className='text-white text-2xl !font-barlow font-medium tracking-wide'
+              className='text-white text-2xl font-barlow! font-medium tracking-wide'
               data-aos="fade-center"
               data-aos-delay="500"
             >
