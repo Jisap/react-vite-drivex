@@ -28,8 +28,25 @@ const Hero = () => {
             >
               Test Drive Your <span className="text-yellow-500">Dream</span> Car
             </h2>
+
+            <Button
+              type="link"
+              to="/about"
+              text={"Learn More"}
+              className="btn-white"
+              data-aos="fade-left"
+              data-aos-delay="300"
+            />
           </div>
         </div>
+
+        <h5
+          className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-wide uppercase! absolute text-white left-0 bottom-0 md:left-14 md:bottom-14 sm:w-90 px-4"
+          data-aos="fade-right"
+          data-aso-delay="300"
+        >
+          Premium car detailing for every vehicle
+        </h5>
       </section>
     </>
   )

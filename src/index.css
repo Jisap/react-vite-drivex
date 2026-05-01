@@ -18,3 +18,17 @@
 .nav-link:hover {
   color: var(--color-primary);
 }
+
+/* Hero Section */
+.hero-overly {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../src/features/home/components/Hero/assets/car-video-overlay.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
