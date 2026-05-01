@@ -11,7 +11,7 @@ const Service = () => {
       <section className='section py-[8%] relative space-y-10'>
         <div className='text-black w-full relative gap-8'>
           <div className='main-title gap-3 text-center content-col'>
-            <span className='subt-title' data-aos='fade-down' data-aos-delay='100'>
+            <span className='sub-title' data-aos='fade-down' data-aos-delay='100'>
               Our Services
             </span>
 
@@ -40,6 +40,7 @@ const Service = () => {
           <Button
             data-aos="fade-up"
             data-aos-delay="900"
+            type="link"
             to="/service"
             text={"View All Services"}
             className="btn-black w-60!"

@@ -16,7 +16,7 @@ const PageBanner = ({
   return (
     <>
       <div
-        ref={bannerRef}
+        ref={containerRef}
         className="section-banner bg-center bg-cover bg-no-repeat min-h-112 flex justify-center items-center lg:items-end pb-10 relative z-10"
         style={{ backgroundImage: `url(${bannerBg})` }}
       >
@@ -26,7 +26,7 @@ const PageBanner = ({
           </h3>
 
           <ul className="centered-row flex-wrap justify-center text-white space-x-2">
-            <li data-aos="fade-center" data-aos-delay="200">
+            <li data-aos="fade-center" data-aos-delay="200" className="flex items-center space-x-2">
               <Link to="/">
                 Home
               </Link>
