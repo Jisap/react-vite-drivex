@@ -3,6 +3,7 @@ import Hero from '../components/Hero/Hero'
 import AOS from 'aos'
 import "aos/dist/aos.css"
 import About from '../components/About/About'
+import Service from '../components/Service/Service'
 
 
 
@@ -25,6 +26,7 @@ const Index = () => {
     <>
       <Hero />
       <About />
+      <Service />
     </>
   )
 }
