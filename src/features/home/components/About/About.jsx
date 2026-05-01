@@ -76,6 +76,15 @@ const About = () => {
                   </div>
                 </li>
               </ul>
+
+              <Button
+                type="link"
+                to="/service"
+                text={"Contact-Us"}
+                className="btn-yellow"
+                data-aos="fade-left"
+                data-aos-delay="500"
+              />
             </div>
           </div>
         </div>
