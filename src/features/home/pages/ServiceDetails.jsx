@@ -23,6 +23,7 @@ const ServiceDetails = () => {
       />
 
       <div className="container mx-auto px-4 py-[8%] section-container gap-10 lg:gap-14 items-start!">
+        {/* Left Side */}
         <div className="w-full lg:w-[70%] content">
           <div
             className="service-main-image mb-8 h-auto lg:h-180"
@@ -195,6 +196,66 @@ const ServiceDetails = () => {
               Experience the difference with our expert detailing services and give your car the premium care it deserves. Book your appointment today and enjoy a flawless driving experience.
             </p>
           </div>
+        </div>
+
+        {/* Right side */}
+        <div className="w-full lg:w-[30%] bg-white shadow p-5 lg:p-8 rounded-sm lg:sticky h-full lg:top-0 lg:right-0">
+          <h4
+            className="text-2xl font-medium tracking-wide"
+            data-aos="fade-left"
+            data-aos-delay="500"
+          >
+            Get in Touch
+          </h4>
+
+          <form className="space-y-8 mt-10 contact-form">
+            <div
+              className="input-wrapper pb-2 relative"
+              data-aos="fade-center"
+              data-aos-delay="600"
+            >
+              <input
+                type="text"
+                placeholder="Name"
+                className="input-box w-full outline-none"
+                required
+              />
+            </div>
+
+            <div
+              className="input-wrapper pb-2 relative"
+              data-aos="fade-center"
+              data-aos-delay="700"
+            >
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="input-box w-full outline-none"
+                required
+              />
+            </div>
+
+            <div
+              className="input-wrapper pb-2 relative"
+              data-aos="fade-center"
+              data-aos-delay="800"
+            >
+              <input
+                type="text"
+                placeholder="Message"
+                className="input-box w-full outline-none"
+                required
+              />
+            </div>
+
+            <Button
+              type="submit"
+              text={"Submit"}
+              data-aos="fade-center"
+              data-aos-delay="900"
+              className="w-full! btn-black mt-0"
+            />
+          </form>
         </div>
       </div>
     </>
