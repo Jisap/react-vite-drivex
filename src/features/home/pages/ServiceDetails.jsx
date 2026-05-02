@@ -256,6 +256,62 @@ const ServiceDetails = () => {
               className="w-full! btn-black mt-0"
             />
           </form>
+
+          <div className="contact-info">
+            <h3
+              className="text-2xl font-medium tracking-wide pt-8 pb-8"
+              data-aos="fade-left"
+              data-aos-delay="600"
+            >
+              Contact Info
+            </h3>
+
+            <ul className="space-y-6 max-w-md">
+              <li
+                className="flex items-start gap-4 group contact-item"
+                data-aos="fade-center"
+                data-aos-delay="700"
+              >
+                <div className="p-3 rounded-full bg-linear-to-r from-purple-500 to-pink-500 text-white transition-transform duration-300 group-hover:scale-110">
+                  <MapPin size={20} />
+                </div>
+
+                <p className="text-gray-700">
+                  <span className="font-semibold block">United Kingdom</span>
+                  221B Baker Street, Office 302 <br /> London, UK NW1 6XE
+                </p>
+              </li>
+
+              <li
+                className="flex items-center gap-4 group contact-item"
+                data-aos="fade-center"
+                data-aos-delay="800"
+              >
+                <div className="p-3 rounded-full bg-linear-to-r from-blue-500 to-cyan-500 text-white transition-transform duration-300 group-hover:scale-110">
+                  <Mail size={20} />
+                </div>
+
+                <p className="text-gray-700">
+                  info@email.com
+                </p>
+              </li>
+
+              <li
+                className="flex items-center gap-4 group contact-item"
+                data-aos="fade-center"
+                data-aos-delay="900"
+              >
+                <div className="p-3 rounded-full bg-linear-to-r from-orange-500 to-red-500 text-white transition-transform duration-300 group-hover:scale-110">
+                  <Phone size={20} />
+                </div>
+
+                <p className="text-gray-700">
+                  (414) 857 - 5557
+                </p>
+
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </>
