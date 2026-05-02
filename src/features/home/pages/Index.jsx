@@ -6,6 +6,7 @@ import About from '../components/About/About'
 import Service from '../components/Service/Service'
 import ServiceCategories from '../components/ServiceCategories/ServiceCategories'
 import Counter from '../components/Counter/Counter'
+import Marquee from '../components/Marquee/Marquee'
 
 
 
@@ -31,6 +32,7 @@ const Index = () => {
       <Service />
       <ServiceCategories />
       <Counter />
+      <Marquee />
     </>
   )
 }
