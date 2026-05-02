@@ -50,3 +50,28 @@
 .scroll-top-car-btn:hover::before {
   opacity: 1;
 }
+
+.input-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.input-wrapper::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 0;
+  background-color: var(--color-primary);
+  transition: all 0.3s ease-in-out;
+}
+
+.input-wrapper:hover::before {
+  width: 100%;
+}

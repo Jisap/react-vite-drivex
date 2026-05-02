@@ -34,12 +34,12 @@ const Navbar = () => {
               <Logo />
             </Link>
 
-            <NavMenu />
+            <NavMenu className="hidden lg:flex" />
           </div>
 
           <div className='lg:centered-row gap-10 hidden'>
             <p
-              className='text-white text-2xl font-barlow! font-medium tracking-wide'
+              className='text-white lg:text-lg xl:text-2xl font-barlow! font-medium tracking-wide'
               data-aos="fade-center"
               data-aos-delay="500"
             >
