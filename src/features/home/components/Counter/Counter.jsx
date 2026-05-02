@@ -1,3 +1,4 @@
+import CounterCard from "../../../../shared/ui/CounterCard"
 import { counters } from "../../data/counter"
 
 
@@ -15,7 +16,10 @@ const Counter = () => {
               data-aos="fade-up"
               data-aos-delay={i * 100}
             >
-
+              <CounterCard
+                end={item.value}
+                label={item.label}
+              />
             </div>
           ))}
         </div>

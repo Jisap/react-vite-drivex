@@ -4,16 +4,19 @@ import { useEffect, useState } from "react"
 
 const CounterCard = ({ end, label }) => {
 
+  const [count, setCount] = useState(0);
+
   useEffect(() => {
     let start = 0;
     const duration = 2000;
-    const increment = end / (duration / 16);
+    const target = Number(end) || 0;
+    const increment = target / (duration / 16);
 
     const counter = setInterval(() => { // cada 16ms aumenta el valor de start
       start += increment;
 
-      if (start >= end) {
-        setCount(end);
+      if (start >= target) {
+        setCount(target);
         clearInterval(counter)
       } else {
         setCount(Math.floor(start))
