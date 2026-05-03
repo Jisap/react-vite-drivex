@@ -7,6 +7,7 @@ import Service from '../components/Service/Service'
 import ServiceCategories from '../components/ServiceCategories/ServiceCategories'
 import Counter from '../components/Counter/Counter'
 import Marquee from '../components/Marquee/Marquee'
+import WhyChooseUs from '../components/WhyChooseUs/WhyChooseUs'
 
 
 
@@ -33,6 +34,7 @@ const Index = () => {
       <ServiceCategories />
       <Counter />
       <Marquee />
+      <WhyChooseUs />
     </>
   )
 }
