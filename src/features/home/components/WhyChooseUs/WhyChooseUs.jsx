@@ -19,6 +19,58 @@ const WhyChooseUs = () => {
               <h2 className="heading-1 max-w-2xl" data-aos="fade-right" data-aos-delay="200">
                 Unmatched quality and service for your needs
               </h2>
+
+              <div className="content-desc flex flex-col gap-10">
+                <p className="text-desc text-gray-light max-w-140" data-aos="fade-up" data-aos-delay="300">
+                  Our dealers are always ready to help you find the perfect car for your needs.
+                  Always we try to make the best and unique interface for our customers.
+                </p>
+
+                <ul className="space-y-5">
+                  <li className="centered-row gap-5" data-aos="fade-up" data-aos-delay="400">
+                    <div className="icon w-18 h-18 centered-row justify-center bg-primary text-black rounded-full">
+                      <img
+                        src={car}
+                        alt="car-image"
+                        className="section-image p-3"
+                      />
+                    </div>
+
+                    <div className="content">
+                      <span className="font-semibold text-2xl font-barlow uppercase tracking-wide pb-2 block">
+                        Extensive Fleet Options
+                      </span>
+
+                      <p className="max-w-80 text-gray-light">
+                        Discover a wide variety of vehicles to suit every need and preference
+                      </p>
+                    </div>
+                  </li>
+
+                  <li className="centered-row gap-5" data-aos="fade-up" data-aos-delay="500">
+                    <div className="icon w-18 h-18 centered-row justify-center bg-primary text-black rounded-full">
+                      <img
+                        src={appointment}
+                        alt="car-image"
+                        className="section-image p-4"
+                      />
+                    </div>
+
+                    <div className="content">
+                      <span className="font-semibold text-2xl font-barlow uppercase tracking-wide pb-2 block">
+                        Extensive Customer Services
+                      </span>
+
+                      <p className="max-w-80 text-gray-light">
+                        24/7 customer support to assist you with any questions or concerns
+                      </p>
+                    </div>
+                  </li>
+
+                </ul>
+              </div>
+
+
             </div>
           </div>
         </section>
