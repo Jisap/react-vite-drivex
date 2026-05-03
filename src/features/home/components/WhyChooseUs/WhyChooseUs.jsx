@@ -81,7 +81,7 @@ const WhyChooseUs = () => {
             />
 
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="play-btn relative w-20 h-20 lg:w-25 lg:h-25 bg-white rounded-full flex items-center justify-center shadow-lg cursor-pointer">
+              <div className="play-btn w-20 h-20 lg:w-25 lg:h-25 centered-row justify-center cursor-pointer">
                 <Play size={35} />
               </div>
             </div>
