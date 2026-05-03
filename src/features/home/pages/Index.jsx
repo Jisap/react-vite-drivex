@@ -11,6 +11,7 @@ import WhyChooseUs from '../components/WhyChooseUs/WhyChooseUs'
 import Work from '../components/Work/Work'
 import Gallery from '../components/Gallery/Gallery'
 import Faqs from '../components/Faqs/Faqs'
+import Banner from '../components/Banner/Banner'
 
 
 
@@ -40,6 +41,7 @@ const Index = () => {
       <Work />
       <Gallery />
       <Faqs />
+      <Banner />
     </>
   )
 }
