@@ -5,6 +5,7 @@ import 'aos/dist/aos.css'
 import { useEffect } from "react"
 import MainRoutes from "./routes/MainRoutes"
 import ScrollToTop from "./shared/components/ScrollToTop"
+import Footer from "./layouts/Footer/Footer"
 
 
 
@@ -25,6 +26,7 @@ const App = () => {
       <Navbar className={"lg:flex hidden"} />
       <ScrollToTop />
       <MainRoutes />
+      <Footer />
     </>
   )
 }
