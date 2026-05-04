@@ -14,6 +14,7 @@ import Faqs from '../components/Faqs/Faqs'
 import Banner from '../components/Banner/Banner'
 import Experience from '../components/Experience/Experience'
 import Contact from '../components/Contact/Contact'
+import Blog from '../components/Blog/Blog'
 
 
 const Index = () => {
@@ -45,6 +46,7 @@ const Index = () => {
       <Banner />
       <Experience />
       <Contact />
+      <Blog />
     </>
   )
 }
