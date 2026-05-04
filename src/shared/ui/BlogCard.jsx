@@ -20,7 +20,7 @@ const BlogCard = ({ image, title, date, id }) => {
           <ul>
             <li className="centered-row text-md text-pera">
               <CalendarDays size={20} className="me-2" />
-              <span>{date}</span>
+              <span className="text-gray-600">{date}</span>
             </li>
           </ul>
 
@@ -35,7 +35,7 @@ const BlogCard = ({ image, title, date, id }) => {
               className="p-0! w-fit! text-xl font-medium tracking-wide"
               text="Read More"
             />
-            <MoveRight size={20} />
+            <MoveRight size={20} className="hover:translate-x-2 transition-all duration-300" />
           </Link>
         </div>
       </div>

@@ -27,7 +27,7 @@ const Blog = () => {
               data-aos="fade-up"
               data-aos-delay={index * 150}
             >
-              <BlogCard id={blog.id} title={blog.title} data={blog.date} image={blog.image} />
+              <BlogCard id={blog.id} title={blog.title} date={blog.date} image={blog.image} />
             </div>
           ))}
         </div>
