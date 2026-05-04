@@ -1,4 +1,4 @@
-import React from 'react'
+import contactBgImg from "./assets/contact-lg.jpg"
 
 const Contact = () => {
   return (
