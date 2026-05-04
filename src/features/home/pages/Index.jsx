@@ -12,6 +12,7 @@ import Work from '../components/Work/Work'
 import Gallery from '../components/Gallery/Gallery'
 import Faqs from '../components/Faqs/Faqs'
 import Banner from '../components/Banner/Banner'
+import Experience from '../components/Experience/Experience'
 
 
 
@@ -42,6 +43,7 @@ const Index = () => {
       <Gallery />
       <Faqs />
       <Banner />
+      <Experience />
     </>
   )
 }
