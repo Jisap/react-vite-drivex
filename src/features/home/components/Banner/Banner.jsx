@@ -9,7 +9,7 @@ import precisionImg2 from "./assets/banner-image-02.jpg"
 const Banner = () => {
   return (
     <>
-      <section className="relative h-140 md:h-250 mb-10 overflow-hidden">
+      <section className="relative h-140 md:h-250 overflow-hidden">
         <Splide
           options={{
             type: "fade",
