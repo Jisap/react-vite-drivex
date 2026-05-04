@@ -6,9 +6,9 @@ const CounterCard = ({ end, label }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+    const observer = new IntersectionObserver(      // Detecta cuando el elemento es visible en el DOM
+      ([entry]) => {                                // entry es un objeto que contiene información sobre el elemento que se quiere monitorear
+        if (entry.isIntersecting) {                 // es true si el elemento es visible en el DOM
           setIsVisible(true);
           observer.unobserve(entry.target);
         }
@@ -16,13 +16,13 @@ const CounterCard = ({ end, label }) => {
       { threshold: 0.1 }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+    if (containerRef.current) {                     // Si el elemento
+      observer.observe(containerRef.current);       // es visible en el DOM se establece en true isVisible
     }
 
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      if (containerRef.current) {                    // Si el elemento
+        observer.unobserve(containerRef.current);    // no es visible deja de monitorear el elemento
       }
     };
   }, []);
@@ -62,4 +62,4 @@ const CounterCard = ({ end, label }) => {
   )
 }
 
-export default CounterCard
+export default CounterCard
