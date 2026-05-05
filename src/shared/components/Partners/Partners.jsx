@@ -15,6 +15,7 @@ const Partners = () => {
     partners3,
     partners2,
     partners1,
+    partners4,
   ]
 
   return (
@@ -30,6 +31,19 @@ const Partners = () => {
               Trusted by leading brands
             </h2>
           </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-10">
+          {partner.map((item, index) => (
+            <div
+              key={index}
+              className="partners-item bg-heading w-full flex justify-center items-center rounded-lg px-12 py-5"
+              data-aos="fade-down"
+              data-aos-delay={100 + index * 120}
+            >
+              <img src={item} alt={`partners-${index}`} className="section-image" />
+            </div>
+          ))}
         </div>
       </div>
     </>
