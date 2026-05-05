@@ -2,6 +2,7 @@ import React from 'react'
 import PageBanner from '../../../shared/ui/PageBanner'
 import AboutComponent from '../components/About/About'
 import Partners from '../../../shared/components/Partners/Partners'
+import Vision from '../../../shared/components/Vision/Vision'
 
 
 const About = () => {
@@ -13,8 +14,8 @@ const About = () => {
       />
 
       <AboutComponent />
-
       <Partners />
+      <Vision />
     </>
   )
 }
