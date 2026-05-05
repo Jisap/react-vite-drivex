@@ -7,6 +7,7 @@ import facebook from "../../../assets/images/facebook.png"
 import instagram from "../../../assets/images/instagram.png"
 import linkedIn from "../../../assets/images/linkedin.png"
 import youtube from "../../../assets/images/youtube.png"
+import CommentForm from "../../../shared/ui/CommentForm"
 
 
 const BlogDetails = () => {
@@ -298,6 +299,7 @@ const BlogDetails = () => {
             </div>
 
           </div>
+          <CommentForm />
         </div>
       </div>
     </>
