@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../components/Button'
 
 const CommentForm = () => {
   return (
@@ -54,6 +55,20 @@ const CommentForm = () => {
               />
             </div>
           </div>
+
+          <div className='centered-row flex-wrap gap-2 text-lg text-gray-400' data-aos="fade-right" data-aos-delay="1200">
+            <input type="checkbox" className='accent-orange-500' />
+            <span>
+              Save my name, email, and website in this browser for the next time I comment.
+            </span>
+          </div>
+
+          <Button
+            data-aos="fade-right" data-aos-delay="1300"
+            type="submit"
+            text="Post Comment"
+            className='btn-black mt-5'
+          />
         </form>
       </div>
     </>
