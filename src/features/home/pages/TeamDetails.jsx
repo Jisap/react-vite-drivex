@@ -32,12 +32,58 @@ const testimonials = [
 
 
 const TeamDetails = () => {
+
+  const { id } = useParams();
+
+  const team = teams.find((team) => team.id === Number(id));
+
+  if (!team) {
+    return <p>Team not found</p>;
+  }
+
   return (
     <>
       <PageBanner
         title="Team Details"
         currentPage="Team Details"
       />
+
+      <div className='container mx-auto px-4 py-[8%] section-container gap-10 lg:gap-14 items-start!'>
+        <div className='w-full lg:w-[35%] bg-white shadow-lg rounded-4xl'>
+          <div className='team-image group overflow-hidden' data-aos="fade-center" data-aos-delay="200">
+            <img src={team.image} alt="team-image" className='group-hover:scale-110 transition-all duration-300' />
+          </div>
+
+          <div className='team-info p-8 space-y-8'>
+            <div className='border-b border-gray-200 pb-5'>
+              <h4 className='text-4xl font-semibold uppercase! tracking-wide pb-2' data-aos="fade-right" data-aos-delay="300">
+                {team.name}
+              </h4>
+
+              <span className='text-lg text-pera' data-aos="fade-right" data-aos-delay="400">
+                {team.position}
+              </span>
+            </div>
+
+            <ul className='space-y-5 border-b border-gray-200 pb-5'>
+              <li className='text-xl'>
+                <strong data-aos="fade-center" data-aos-delay="200">Phone:  </strong>
+                <strong data-aos="fade-right" data-aos-delay="500">{team.phone}</strong>
+              </li>
+
+              <li className='text-xl'>
+                <strong data-aos="fade-center" data-aos-delay="200">Email:  </strong>
+                <strong data-aos="fade-right" data-aos-delay="600">{team.email}</strong>
+              </li>
+
+              <li className='text-xl'>
+                <strong data-aos="fade-center" data-aos-delay="200">Position:  </strong>
+                <strong data-aos="fade-right" data-aos-delay="700">{team.position}</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
