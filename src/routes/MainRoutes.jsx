@@ -6,6 +6,7 @@ import ServiceDetails from '../features/home/pages/ServiceDetails';
 import ServicePage from '../features/home/pages/Service';
 import BlogPage from '../features/home/pages/Blog';
 import BlogDetails from '../features/home/pages/BlogDetails';
+import About from '../features/home/pages/About';
 
 
 
@@ -32,6 +33,7 @@ const MainRoutes = () => {
       <Route path="/service/:id" element={<ServiceDetails />} />
       <Route path="/blog" element={<BlogPage />} />
       <Route path="/blog/:id" element={<BlogDetails />} />
+      <Route path="/about" element={<About />} />
     </Routes>
   )
 }
