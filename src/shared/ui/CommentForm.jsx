@@ -5,7 +5,7 @@ const CommentForm = () => {
   return (
     <>
       <div className='w-full mx-auto'>
-        <span className='text-2xl font-semibold mb-3 block'>Leave a Replay</span>
+        <span className='text-2xl font-semibold mb-3 block'>Leave a Reply</span>
         <p className='text-gray-400 mb-8' data-aos="fade-right" data-aos-delay="600">
           Your email address will not be published. Required fields are marked.
         </p>
@@ -17,11 +17,11 @@ const CommentForm = () => {
             </label>
             <textarea
               rows="6"
-              className='w-full bg-gray-50 border border-gray-200 resize-none rounded-lg p-5 focus:outline-none focus:border-primary transition'
+              className='w-full bg-gray-50 border border-gray-200 resize-none rounded-lg p-5 focus:outline-none focus:border-primary transition mb-6'
             ></textarea>
           </div>
 
-          <div className='grid gird-cols-1 md:grid-cols-3 gap-6'>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-8'>
             <div data-aos="fade-center" data-aos-delay="900">
               <label className='block mb-2 text-lg'>
                 Name <span className='text-red-500'>*</span>
