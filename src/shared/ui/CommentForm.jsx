@@ -29,7 +29,7 @@ const CommentForm = () => {
 
               <input
                 type="text"
-                className='w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focu:border-primary transition'
+                className='w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-primary transition'
               />
             </div>
 
@@ -40,7 +40,7 @@ const CommentForm = () => {
 
               <input
                 type="email"
-                className='w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focu:border-primary transition'
+                className='w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-primary transition'
               />
             </div>
 
@@ -51,7 +51,7 @@ const CommentForm = () => {
 
               <input
                 type="text"
-                className='w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focu:border-primary transition'
+                className='w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-primary transition'
               />
             </div>
           </div>
