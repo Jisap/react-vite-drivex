@@ -81,6 +81,32 @@ const TeamDetails = () => {
                 <strong data-aos="fade-right" data-aos-delay="700">{team.position}</strong>
               </li>
             </ul>
+
+            <ul className='centered-row gap-5'>
+              <li data-aos="fade-up" data-aos-delay="500">
+                <Link to="https://facebook.com" className="group">
+                  <img src={facebook} alt="facebook" className='bg-black p-2 rounded-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 cursor-pointer' />
+                </Link>
+              </li>
+
+              <li data-aos="fade-up" data-aos-delay="600">
+                <Link to="https://instagram.com" className="group">
+                  <img src={instagram} alt="instagram" className='bg-black p-2 rounded-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 cursor-pointer' />
+                </Link>
+              </li>
+
+              <li data-aos="fade-up" data-aos-delay="700">
+                <Link to="https://youtube.com" className="group">
+                  <img src={youtube} alt="youtube" className='bg-black p-2 rounded-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 cursor-pointer' />
+                </Link>
+              </li>
+
+              <li data-aos="fade-up" data-aos-delay="800">
+                <Link to="https://linkedin.com" className="group">
+                  <img src={linkedin} alt="linkedin" className='bg-black p-2 rounded-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 cursor-pointer' />
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
