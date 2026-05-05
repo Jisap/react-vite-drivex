@@ -4,6 +4,8 @@ import Index from '../features/home/pages/Index';
 import AOS from 'aos';
 import ServiceDetails from '../features/home/pages/ServiceDetails';
 import ServicePage from '../features/home/pages/Service';
+import BlogPage from '../features/home/pages/Blog';
+import BlogDetails from '../features/home/pages/BlogDetails';
 
 
 
@@ -28,6 +30,8 @@ const MainRoutes = () => {
       <Route path="/" element={<Index />} />
       <Route path="/service" element={<ServicePage />} />
       <Route path="/service/:id" element={<ServiceDetails />} />
+      <Route path="/blog" element={<BlogPage />} />
+      <Route path="/blog/:id" element={<BlogDetails />} />
     </Routes>
   )
 }
