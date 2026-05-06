@@ -8,6 +8,7 @@ import gallery6 from "../../../assets/images/imagegallery/gallery-6.jpg"
 import gallery7 from "../../../assets/images/imagegallery/gallery-7.jpg"
 import gallery8 from "../../../assets/images/imagegallery/gallery-8.jpg"
 import gallery9 from "../../../assets/images/imagegallery/gallery-9.jpg"
+import Image from '../../../shared/ui/Image'
 
 
 
@@ -31,6 +32,22 @@ const ImageGallery = () => {
         title="Image Gallery"
         currentPage="Image Gallery"
       />
+
+      <div className='section py-[8%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative'>
+        {gallery.map((img, index) => (
+          <div
+            key={index}
+            data-aos="zoom-in-out"
+            data-aos-delay={index * 100}
+          >
+            <Image image={img}
+              src={img}
+              wrapperClass='w-full h-full rounded-xl overflow-hidden'
+            />
+          </div>
+
+        ))}
+      </div>
     </>
   )
 }
