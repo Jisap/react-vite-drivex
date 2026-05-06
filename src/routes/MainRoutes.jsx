@@ -10,6 +10,7 @@ import About from '../features/home/pages/About';
 import TeamDetails from '../features/home/pages/TeamDetails';
 import Pricing from '../features/home/pages/Pricing';
 import ImageGallery from '../features/home/pages/ImageGallery';
+import Testimonials from '../features/home/pages/Testimonials';
 
 
 
@@ -40,6 +41,7 @@ const MainRoutes = () => {
       <Route path="/team/:id" element={<TeamDetails />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/imagegallery" element={<ImageGallery />} />
+      <Route path="/testimonials" element={<Testimonials />} />
     </Routes>
   )
 }
