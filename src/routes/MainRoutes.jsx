@@ -8,6 +8,7 @@ import BlogPage from '../features/home/pages/Blog';
 import BlogDetails from '../features/home/pages/BlogDetails';
 import About from '../features/home/pages/About';
 import TeamDetails from '../features/home/pages/TeamDetails';
+import Pricing from '../features/home/pages/Pricing';
 
 
 
@@ -36,6 +37,7 @@ const MainRoutes = () => {
       <Route path="/blog/:id" element={<BlogDetails />} />
       <Route path="/about" element={<About />} />
       <Route path="/team/:id" element={<TeamDetails />} />
+      <Route path="/pricing" element={<Pricing />} />
     </Routes>
   )
 }
