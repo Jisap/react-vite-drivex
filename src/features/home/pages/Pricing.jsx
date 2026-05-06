@@ -45,6 +45,9 @@ const Pricing = () => {
           />
         </div>
       </div>
+
+      <Banner />
+      <Testimonials />
     </>
   )
 }
