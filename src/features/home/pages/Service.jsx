@@ -34,6 +34,12 @@ const Service = () => {
           ))}
         </div>
       </div>
+
+      <div className='bg-gray-light'>
+        <Partners />
+      </div>
+
+      <Testimonials />
     </>
   )
 }
