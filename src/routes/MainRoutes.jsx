@@ -12,6 +12,7 @@ import Pricing from '../features/home/pages/Pricing';
 import ImageGallery from '../features/home/pages/ImageGallery';
 import Testimonials from '../features/home/pages/Testimonials';
 import Faqs from '../features/home/pages/Faqs';
+import Cars from '../features/home/pages/Cars';
 
 
 
@@ -44,6 +45,7 @@ const MainRoutes = () => {
       <Route path="/imagegallery" element={<ImageGallery />} />
       <Route path="/testimonials" element={<Testimonials />} />
       <Route path="/faqs" element={<Faqs />} />
+      <Route path="/cars" element={<Cars />} />
     </Routes>
   )
 }
