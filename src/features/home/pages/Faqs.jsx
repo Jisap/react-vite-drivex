@@ -96,59 +96,199 @@ const Faqs = () => {
       />
 
       <div className='section section-container items-start! py-[8%] relative gap-10 lg:gap-14'>
-        <div className='w-full lg:w-[30%]'>
-          <ul className='w-full bg-gray-light rounded-2xl'>
-            <li data-aos="fade-center" data-aos-delay="200">
-              <button
-                onClick={() => scrollToSection(generalRef)}
-                className="centered-row justify-between px-5 py-5 w-full border-b border-gray-200 group cursor-pointer"
+        {/* Sticky Sidebar */}
+        <div className='w-full lg:w-[30%] lg:sticky lg:top-32 self-start z-10'>
+          <div className="bg-gray-light rounded-2xl p-6 mb-6">
+            <h3 className="text-2xl font-bold mb-4 border-b border-gray-200 pb-4">Categories</h3>
+            <ul className='w-full space-y-2'>
+              <li data-aos="fade-center" data-aos-delay="200">
+                <button
+                  onClick={() => scrollToSection(generalRef)}
+                  className="centered-row justify-between px-4 py-3 w-full rounded-xl hover:bg-white transition-all duration-300 group cursor-pointer"
+                >
+                  <span className='text-lg font-medium'>
+                    General Information
+                  </span>
+
+                  <MoveRight size={20} className='-rotate-45 group-hover:rotate-0 transition-all duration-300' />
+                </button>
+              </li>
+
+              <li data-aos="fade-center" data-aos-delay="300">
+                <button
+                  onClick={() => scrollToSection(bookingRef)}
+                  className="centered-row justify-between px-4 py-3 w-full rounded-xl hover:bg-white transition-all duration-300 group cursor-pointer"
+                >
+                  <span className='text-lg font-medium'>
+                    Booking and Reservation
+                  </span>
+
+                  <MoveRight size={20} className='-rotate-45 group-hover:rotate-0 transition-all duration-300' />
+                </button>
+              </li>
+
+              <li data-aos="fade-center" data-aos-delay="300">
+                <button
+                  onClick={() => scrollToSection(pricingRef)}
+                  className="centered-row justify-between px-4 py-3 w-full rounded-xl hover:bg-white transition-all duration-300 group cursor-pointer"
+                >
+                  <span className='text-lg font-medium'>
+                    Pricing & Payment
+                  </span>
+
+                  <MoveRight size={20} className='-rotate-45 group-hover:rotate-0 transition-all duration-300' />
+                </button>
+              </li>
+
+              <li data-aos="fade-center" data-aos-delay="300">
+                <button
+                  onClick={() => scrollToSection(vehicleRef)}
+                  className="centered-row justify-between px-4 py-3 w-full rounded-xl hover:bg-white transition-all duration-300 group cursor-pointer"
+                >
+                  <span className='text-lg font-medium'>
+                    Vehicle Information
+                  </span>
+
+                  <MoveRight size={20} className='-rotate-45 group-hover:rotate-0 transition-all duration-300' />
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className='w-full lg:w-[70%] space-y-10'>
+          <div ref={generalRef} className='faq-container space-y-8'>
+            <div className='info'>
+              <span
+                className='sub-title'
+                data-aos="fade-right"
+                data-aos-delay="200"
               >
-                <span className='text-lg'>
-                  General Information
-                </span>
+                FAQs
+              </span>
 
-                <MoveRight size={20} className='-rotate-45 group-hover:rotate-0 transition-all duration-300' />
-              </button>
-            </li>
-
-            <li data-aos="fade-center" data-aos-delay="300">
-              <button
-                onClick={() => scrollToSection(bookingRef)}
-                className="centered-row justify-between px-5 py-5 w-full border-b border-gray-200 group cursor-pointer"
+              <h2 className='heading-1'
+                data-aos="fade-right"
+                data-aos-delay="300"
               >
-                <span className='text-lg'>
-                  Booking and Reservation
-                </span>
+                General Information
+              </h2>
+            </div>
 
-                <MoveRight size={20} className='-rotate-45 group-hover:rotate-0 transition-all duration-300' />
-              </button>
-            </li>
-            <li data-aos="fade-center" data-aos-delay="300">
-              <button
-                onClick={() => scrollToSection(pricingRef)}
-                className="centered-row justify-between px-5 py-5 w-full border-b border-gray-200 group cursor-pointer"
+            <div className='faq-content'>
+              {faqs.slice(0, 3).map((faq, index) => (
+                <FAQItem
+                  key={index}
+                  title={faq.title}
+                  content={faq.content}
+                  isOpen={activeIndex === index}
+                  onClick={() => handleToggle(index)}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div ref={bookingRef} className='faq-container space-y-8'>
+            <div className='info'>
+              <span
+                className='sub-title'
+                data-aos="fade-right"
+                data-aos-delay="200"
               >
-                <span className='text-lg'>
-                  Pricing & Payment
-                </span>
+                FAQs
+              </span>
 
-                <MoveRight size={20} className='-rotate-45 group-hover:rotate-0 transition-all duration-300' />
-              </button>
-            </li>
-
-            <li data-aos="fade-center" data-aos-delay="300">
-              <button
-                onClick={() => scrollToSection(vehicleRef)}
-                className="centered-row justify-between px-5 py-5 w-full border-b border-gray-200 group cursor-pointer"
+              <h2 className='heading-1'
+                data-aos="fade-right"
+                data-aos-delay="300"
               >
-                <span className='text-lg'>
-                  Vehicle Information
-                </span>
+                Booking and Reservations
+              </h2>
+            </div>
 
-                <MoveRight size={20} className='-rotate-45 group-hover:rotate-0 transition-all duration-300' />
-              </button>
-            </li>
-          </ul>
+            <div className='faq-content'>
+              {faqs.slice(3, 6).map((faq, index) => {
+                const realIndex = index + 3;
+                return (
+                  <FAQItem
+                    key={realIndex}
+                    title={faq.title}
+                    content={faq.content}
+                    isOpen={activeIndex === realIndex}
+                    onClick={() => handleToggle(realIndex)}
+                  />
+                )
+              })}
+            </div>
+          </div>
+
+          <div ref={pricingRef} className='faq-container space-y-8'>
+            <div className='info'>
+              <span
+                className='sub-title'
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
+                FAQs
+              </span>
+
+              <h2 className='heading-1'
+                data-aos="fade-right"
+                data-aos-delay="300"
+              >
+                Pricing & Payment
+              </h2>
+            </div>
+
+            <div className='faq-content'>
+              {faqs.slice(6, 9).map((faq, index) => {
+                const realIndex = index + 6;
+                return (
+                  <FAQItem
+                    key={realIndex}
+                    title={faq.title}
+                    content={faq.content}
+                    isOpen={activeIndex === realIndex}
+                    onClick={() => handleToggle(realIndex)}
+                  />
+                )
+              })}
+            </div>
+          </div>
+
+          <div ref={vehicleRef} className='faq-container space-y-8'>
+            <div className='info'>
+              <span
+                className='sub-title'
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
+                FAQs
+              </span>
+
+              <h2 className='heading-1'
+                data-aos="fade-right"
+                data-aos-delay="300"
+              >
+                Vehicle Information
+              </h2>
+            </div>
+
+            <div className='faq-content'>
+              {faqs.slice(9, 12).map((faq, index) => {
+                const realIndex = index + 9;
+                return (
+                  <FAQItem
+                    key={realIndex}
+                    title={faq.title}
+                    content={faq.content}
+                    isOpen={activeIndex === realIndex}
+                    onClick={() => handleToggle(realIndex)}
+                  />
+                )
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </>
