@@ -5,6 +5,7 @@ import Partners from '../../../shared/components/Partners/Partners'
 import Vision from '../../../shared/components/Vision/Vision'
 import WhyChooseUs from '../components/WhyChooseUs/WhyChooseUs'
 import Team from '../../../shared/components/Team/Team'
+import Testimonials from '../../../shared/components/Testimonials/Testimonials'
 
 
 const About = () => {
@@ -20,6 +21,7 @@ const About = () => {
       <Vision />
       <WhyChooseUs />
       <Team />
+      <Testimonials />
     </>
   )
 }
