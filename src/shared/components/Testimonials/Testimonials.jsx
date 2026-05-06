@@ -25,10 +25,10 @@ const Testimonials = () => {
             type: "loop",
             autoplay: true,
             interval: 3000,
-            perPage: 1,
+            perPage: 3,
             gap: "1rem",
             arrows: false,
-            pagination: true,
+            pagination: false,
             breakpoints: {
               1024: {
                 perPage: 2,
