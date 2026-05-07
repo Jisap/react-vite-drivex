@@ -22,6 +22,7 @@ import { useParams } from "react-router-dom"
 import PageBanner from "../../../shared/ui/PageBanner"
 import { cars } from "../../../shared/data/cars"
 import Button from "../../../shared/components/Button"
+import { faqs } from "../data/faqs"
 
 const CarDetails = () => {
 
@@ -29,7 +30,7 @@ const CarDetails = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  const handeToggle = (index) => {
+  const handleToggle = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   }
 
@@ -180,6 +181,149 @@ const CarDetails = () => {
                 </SplideSlide>
               ))}
             </Splide>
+
+            <ul className="flex justify-star items-center flex-wrap gap-10 xl:gap-20 py-8 border-b border-gray-200/50">
+              <li className="centered-row flex-wrap gap-5" data-aos="fade-center" data-aos-delay="300">
+                <div className="icon w-14 h-14">
+                  <img
+                    src={icon1}
+                    alt="imcon-img"
+                    className="section-image"
+                  />
+                </div>
+
+                <div className="info">
+                  <h6 className="text-xl font-semibold">Unlimited KMs</h6>
+                  <span className="text-desc">Endless Km with no extra charge</span>
+                </div>
+              </li>
+
+              <li className="centered-row flex-wrap gap-5" data-aos="fade-center" data-aos-delay="300">
+                <div className="icon w-14 h-14">
+                  <img
+                    src={icon2}
+                    alt="icon-img"
+                    className="section-image"
+                  />
+                </div>
+
+                <div className="info">
+                  <h6 className="text-xl font-semibold">Unlimited KMs</h6>
+                  <span className="text-desc">Endless Km with no extra charge</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div className="content">
+            <span className="sub-title" data-aos="fade-right" data-aos-delay="300">
+              General Information
+            </span>
+
+            <h2 className="heading-1 mb-5" data-aos="fade-right" data-aos-delay="400">
+              Know about our car service
+            </h2>
+
+            <p className="text-desc mb-8" data-aos="fade-right" data-aos-delay="500">
+              Unlock a world of driving pleasure with DriveX. Our diverse fleet offers something for every journey. From zippy city cars perfect for navigating urban landscapes to spacious SUVs ideal for family adventures and luxury sedans that redefine elegance, we have the perfect vehicle to match your style and needs.
+            </p>
+
+            <ul className="flex flex-col gap-5 pb-12">
+              <li className="centered-row flex-wrap gap-2" data-aos="fade-right" data-aos-delay="600">
+                <Check size={22} className="bg-black text-white p-1 rounded-full" />
+                <span className="text-lg font-medium">24/7 Roadside assistance</span>
+              </li>
+
+              <li className="centered-row flex-wrap gap-2" data-aos="fade-right" data-aos-delay="600">
+                <Check size={22} className="bg-black text-white p-1 rounded-full" />
+                <span className="text-lg font-medium">Free Cancellation & Return</span>
+              </li>
+
+              <li className="centered-row flex-wrap gap-2" data-aos="fade-right" data-aos-delay="600">
+                <Check size={22} className="bg-black text-white p-1 rounded-full" />
+                <span className="text-lg font-medium">Rent Now pay When You Arrive</span>
+              </li>
+            </ul>
+
+            <span className="sub-title" data-aos="fade-right" data-aos-delay="300">
+              Amenities
+            </span>
+
+            <h2 className="heading-1 mb-5" data-aos="fade-right" data-aos-delay="400">
+              Premium amenities and features
+            </h2>
+
+            <ul className="grid lg:grid-cols-2 cl:grid-cols-4 gap-5 pb-12">
+              <li className="centered-row flex-wrap gap-2" data-aos="fade-right" data-aos-delay="600">
+                <Check size={22} className="bg-black text-white p-1 rounded-full" />
+                <span className="text-lg font-medium">Music System</span>
+              </li>
+
+              <li className="centered-row flex-wrap gap-2" data-aos="fade-right" data-aos-delay="600">
+                <Check size={22} className="bg-black text-white p-1 rounded-full" />
+                <span className="text-lg font-medium">Toolkit</span>
+              </li>
+
+              <li className="centered-row flex-wrap gap-2" data-aos="fade-right" data-aos-delay="600">
+                <Check size={22} className="bg-black text-white p-1 rounded-full" />
+                <span className="text-lg font-medium">Abs System</span>
+              </li>
+
+              <li className="centered-row flex-wrap gap-2" data-aos="fade-right" data-aos-delay="600">
+                <Check size={22} className="bg-black text-white p-1 rounded-full" />
+                <span className="text-lg font-medium">Bluethooh</span>
+              </li>
+
+              <li className="centered-row flex-wrap gap-2" data-aos="fade-right" data-aos-delay="600">
+                <Check size={22} className="bg-black text-white p-1 rounded-full" />
+                <span className="text-lg font-medium">Usb Charger</span>
+              </li>
+
+              <li className="centered-row flex-wrap gap-2" data-aos="fade-right" data-aos-delay="600">
+                <Check size={22} className="bg-black text-white p-1 rounded-full" />
+                <span className="text-lg font-medium">Aux Input</span>
+              </li>
+
+              <li className="centered-row flex-wrap gap-2" data-aos="fade-right" data-aos-delay="600">
+                <Check size={22} className="bg-black text-white p-1 rounded-full" />
+                <span className="text-lg font-medium">Full Boot Space</span>
+              </li>
+
+              <li className="centered-row flex-wrap gap-2" data-aos="fade-right" data-aos-delay="600">
+                <Check size={22} className="bg-black text-white p-1 rounded-full" />
+                <span className="text-lg font-medium">Aux Input</span>
+              </li>
+
+              <li className="centered-row flex-wrap gap-2" data-aos="fade-right" data-aos-delay="600">
+                <Check size={22} className="bg-black text-white p-1 rounded-full" />
+                <span className="text-lg font-medium">Power Steering</span>
+              </li>
+
+              <li className="centered-row flex-wrap gap-2" data-aos="fade-right" data-aos-delay="600">
+                <Check size={22} className="bg-black text-white p-1 rounded-full" />
+                <span className="text-lg font-medium">Airbags</span>
+              </li>
+            </ul>
+
+            <span className="sub-title" data-aos="fade-right" data-aos-delay="300">
+              rental Conditions
+            </span>
+
+            <h2 className="heading-1 mb-5" data-aos="fade-right" data-aos-delay="400">
+              Policies and agreement
+            </h2>
+
+            <div className="faq-content">
+              {faqs.map((faq, index) => (
+                <FAQItem
+                  key={index}
+                  title={faq.title}
+                  content={faq.content}
+                  isOpen={activeIndex === index}
+                  onClick={() => handleToggle(index)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
