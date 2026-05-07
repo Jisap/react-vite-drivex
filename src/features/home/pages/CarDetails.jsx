@@ -55,8 +55,8 @@ const CarDetails = () => {
 
       <div className="container mx-auto px-4 py-[8%] section-container gap-10 lg:gap-14 items-start!">
 
-        <div className="w-full lg:w-[60%] space-y-8">
-          <div className="w-full lg:w-[50%] bg-white border border-gray-200/50 p-5 lg:p-8 rounded-xl lg:sticky h-full lg:top-0 lg:right-0 space-y-8">
+        <div className="w-full lg:w-[35%] space-y-8">
+          <div className="w-full bg-white border border-gray-200/50 p-5 lg:p-8 rounded-xl lg:sticky h-full lg:top-0 lg:right-0 space-y-8">
             <div className="price flex items-end gap-1 border-b border-gray-200/50 pb-8">
               <span className="text-5xl font-bold">$</span>
               <span className="text-6xl font-bold font-barlow">{car.price}</span>
@@ -157,6 +157,29 @@ const CarDetails = () => {
               data-aos="fade-center"
               data-aos-delay="1000"
             />
+          </div>
+        </div>
+
+        <div className="w-full lg:w-[65%] flex flex-col gap-10">
+          <div className="relative">
+            <Splide
+              options={{
+                type: "loop",
+                parPage: 1,
+                arrows: false,
+                pagination: true
+              }}
+            >
+              {slides.map((slide, index) => (
+                <SplideSlide key={index} data-aos="fade-center" data-aos-delay={index * 100}>
+                  <img
+                    src={slide}
+                    alt={`slide ${index + 1}`}
+                    className="w-full h-140 object-cover object-bottom rounded-xl"
+                  />
+                </SplideSlide>
+              ))}
+            </Splide>
           </div>
         </div>
       </div>
