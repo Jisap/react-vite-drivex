@@ -56,7 +56,7 @@ const CarDetails = () => {
       <div className="container mx-auto px-4 py-[8%] section-container gap-10 lg:gap-14 items-start!">
 
         <div className="w-full lg:w-[60%] space-y-8">
-          <div className="w-full lg:w-[30%] bg-white border border-gray-200/50 p-5 lg:p-8 rounded-xl lg:sticky h-full lg:top-0 lg:right-0 space-y-8">
+          <div className="w-full lg:w-[50%] bg-white border border-gray-200/50 p-5 lg:p-8 rounded-xl lg:sticky h-full lg:top-0 lg:right-0 space-y-8">
             <div className="price flex items-end gap-1 border-b border-gray-200/50 pb-8">
               <span className="text-5xl font-bold">$</span>
               <span className="text-6xl font-bold font-barlow">{car.price}</span>
@@ -77,7 +77,86 @@ const CarDetails = () => {
 
                 <span>{car.doors}</span>
               </li>
+
+              <li className="centered-row justify-between" data-aos="fade-center" data-aos-delay="400">
+                <div className="centered-row gap-2 text-[16px]">
+                  <img
+                    src={passengersIcon}
+                    alt="passengers"
+                    className="w-6 h-6 brightness-0"
+                  />
+
+                  <span>Passengers</span>
+                </div>
+
+                <span>{car.passengers}</span>
+              </li>
+
+              <li className="centered-row justify-between" data-aos="fade-center" data-aos-delay="400">
+                <div className="centered-row gap-2 text-[16px]">
+                  <img
+                    src={transmissionIcon}
+                    alt="transmission"
+                    className="w-6 h-6 brightness-0"
+                  />
+
+                  <span>Transmission</span>
+                </div>
+
+                <span>{car.transmission}</span>
+              </li>
+
+              <li className="centered-row justify-between" data-aos="fade-center" data-aos-delay="400">
+                <div className="centered-row gap-2 text-[16px]">
+                  <img
+                    src={ageIcon}
+                    alt="age"
+                    className="w-6 h-6 brightness-0"
+                  />
+
+                  <span>Age</span>
+                </div>
+
+                <span>{car.age}</span>
+              </li>
+
+              <li className="centered-row justify-between" data-aos="fade-center" data-aos-delay="400">
+                <div className="centered-row gap-2 text-[16px]">
+                  <img
+                    src={bagsIcon}
+                    alt="bags"
+                    className="w-6 h-6 brightness-0"
+                  />
+
+                  <span>Bags</span>
+                </div>
+
+                <span>{car.luggage}</span>
+              </li>
+
+              <li className="centered-row justify-between" data-aos="fade-center" data-aos-delay="400">
+                <div className="centered-row gap-2 text-[16px]">
+                  <img
+                    src={airconditionIcon}
+                    alt="aircondition"
+                    className="w-6 h-6 brightness-0"
+                  />
+
+                  <span>Air condition</span>
+                </div>
+
+                <span>{car.aircondition}</span>
+              </li>
             </ul>
+
+            <Button
+              text="Book now"
+              type="button"
+              className="btn-black mt-0 w-full!"
+              onClick={() => setShowModal(true)}
+              data-aos="fade-center"
+              data-aos-delay="1000"
+            />
           </div>
         </div>
       </div>
