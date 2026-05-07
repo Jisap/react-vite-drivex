@@ -41,6 +41,12 @@ const Cars = () => {
           <CarList
             cars={currentCars}
           />
+
+          <Pagination
+            totalPages={totalPages}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
         </div>
       </div>
     </>
