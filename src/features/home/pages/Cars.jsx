@@ -2,10 +2,23 @@ import PageBanner from "../../../shared/ui/PageBanner";
 import { cars } from "../../../shared/data/cars";
 import CarList from "../../../shared/ui/CarList";
 import useCarFilter from "../../../shared/hooks/useCarFilter";
+import CarFilter from "../../../shared/ui/CarFilter";
+import Pagination from "../../../shared/ui/Pagination";
+
+
 
 const Cars = () => {
 
-  const { currentCars } = useCarFilter(cars)
+  const {
+    search,
+    setSearch,
+    selectedTypes,
+    handleSearch,
+    handleCheckBox,
+    currentCars,
+    totalPages,
+    currentPage,
+    setCurrentPage } = useCarFilter(cars)
 
   return (
     <>
@@ -15,6 +28,15 @@ const Cars = () => {
       />
 
       <div className="section section-container items-start! py-[8%] flex flex-col lg:flex-row gap-10">
+
+        <CarFilter
+          search={search}
+          setSearch={setSearch}
+          selectedTypes={selectedTypes}
+          handleCheckbox={handleCheckBox}
+          onSearch={handleSearch}
+        />
+
         <div className="w-full lg:w-[70%]">
           <CarList
             cars={currentCars}

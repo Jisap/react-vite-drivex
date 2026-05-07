@@ -1,4 +1,4 @@
-
+import Button from "../components/Button"
 
 const carType = [
   "Convertible Car",
@@ -52,7 +52,7 @@ const CarFilter = ({
         </div>
 
         <Button
-          title="Search"
+          text="Search"
           className="btn-black w-full mt-0"
           data-aos="fade-right"
           data-aos-delay="500"
