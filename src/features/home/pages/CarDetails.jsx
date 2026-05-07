@@ -53,10 +53,10 @@ const CarDetails = () => {
         currentPage="Car Details"
       />
 
-      <div className="container mx-auto px-4 py-[8%] section-container gap-10 lg:gap-14 items-start!">
+      <div className="container mx-auto px-4 py-[8%] section-container gap-10 lg:gap-14 items-stretch">
 
         <div className="w-full lg:w-[35%] space-y-8">
-          <div className="w-full bg-white border border-gray-200/50 p-5 lg:p-8 rounded-xl lg:sticky h-full lg:top-0 lg:right-0 space-y-8">
+          <div className="w-full bg-white border border-gray-200/50 p-5 lg:p-8 rounded-xl lg:sticky lg:top-32 space-y-8">
             <div className="price flex items-end gap-1 border-b border-gray-200/50 pb-8 relative overflow-hidden group">
               <div className="absolute -right-4 -top-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-500"></div>
               <span className="text-5xl font-bold text-primary">$</span>
