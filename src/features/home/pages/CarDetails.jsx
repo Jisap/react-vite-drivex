@@ -327,6 +327,96 @@ const CarDetails = () => {
           </div>
         </div>
       </div>
+
+      {showModal && (
+        <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 px-4">
+          <div className="relative bg-black w-full max-w-3xl p-8 rounded-2xl">
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 bg-white text-black w-10 h-10 rounded-full flex items-center justify-center cursor-pointer z-0"
+            >
+              <X />
+            </button>
+
+            <h2 className="heading-1 text-white mb-5">
+              Reserve your vehicle today!
+            </h2>
+
+            <p className="text-desc text-gray-light mb-10">
+              Fill out the form below to reserve your vehicle
+            </p>
+
+            <form className="grid-col lg:space-y-12 space-y-10">
+              <div className="grid-col lg:grid-cols-3 gap-5">
+                <input
+                  type="text"
+                  placeholder="Enter Full Name"
+                  className="border-b outline-none border-white text-white pb-2 focus:border-primary"
+                  required
+                />
+
+                <input
+                  type="email"
+                  placeholder="Enter your Email"
+                  className="border-b outline-none border-white text-white pb-2 focus:border-primary"
+                  required
+                />
+
+                <input
+                  type="number"
+                  placeholder="Enter your Phone"
+                  className="border-b outline-none border-white text-white pb-2 focus:border-primary"
+                  required
+                />
+              </div>
+
+              <div className="grid-col lg:grid-cols-2 gap-5">
+                <select className="border-b outline-none border-white bg-black capitalize text-white pb-2 focus:border-primary">
+                  <option selected>Pick Up Location</option>
+                  <option selected>Abu Dhabi</option>
+                  <option selected>London</option>
+                  <option selected>Sharjah</option>
+                  <option selected>Paris</option>
+                  <option selected>Berlin</option>
+                  <option selected>New York</option>
+                </select>
+
+                <input
+                  type="date"
+                  className="scheme-white [&::-webkit-calendar-picker-indicator]:invert border-b-rose-50 outline-none border-white text-white pb-2 focus:border-primary"
+                />
+              </div>
+
+              <div className="grid-col lg:grid-cols-2 gap-5">
+                <select className="border-b outline-none border-white bg-black capitalize text-white pb-2 focus:border-primary">
+                  <option selected>Drop Off Location</option>
+                  <option selected>Abu Dhabi</option>
+                  <option selected>London</option>
+                  <option selected>Sharjah</option>
+                  <option selected>Paris</option>
+                  <option selected>Berlin</option>
+                  <option selected>New York</option>
+                </select>
+
+                <input
+                  type="date"
+                  className="scheme-white [&::-webkit-calendar-picker-indicator]:invert border-b-rose-50 outline-none border-white text-white pb-2 focus:border-primary"
+                />
+              </div>
+
+              <textarea
+                placeholder="Write Your Message"
+                className="border-b outline-none border-white bg-black capitalize text-white pb-2 focus:border-primary h-28"
+              />
+
+              <Button
+                text="Book Now"
+                className="btn-white mt-10"
+              />
+            </form>
+          </div>
+        </div>
+      )}
     </>
   )
 }
