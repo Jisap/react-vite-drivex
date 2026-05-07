@@ -26,16 +26,15 @@ import { faqs } from "../data/faqs"
 
 const CarDetails = () => {
 
-  const slides = [slide1, slide2, slide3, slide4];
+  const { id } = useParams();
+  const car = cars.find((car) => car.id === parseInt(id));
+  const slides = car ? [car.image, slide1, slide2, slide3, slide4] : [];
   const [activeIndex, setActiveIndex] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
   const handleToggle = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   }
-
-  const { id } = useParams();
-  const car = cars.find((car) => car.id === parseInt(id));
   if (!car) {
     return (
       <>
@@ -58,10 +57,11 @@ const CarDetails = () => {
 
         <div className="w-full lg:w-[35%] space-y-8">
           <div className="w-full bg-white border border-gray-200/50 p-5 lg:p-8 rounded-xl lg:sticky h-full lg:top-0 lg:right-0 space-y-8">
-            <div className="price flex items-end gap-1 border-b border-gray-200/50 pb-8">
-              <span className="text-5xl font-bold">$</span>
-              <span className="text-6xl font-bold font-barlow">{car.price}</span>
-              <span className="text-xl font-medium text-gray-500 mb-2">{car.rent}</span>
+            <div className="price flex items-end gap-1 border-b border-gray-200/50 pb-8 relative overflow-hidden group">
+              <div className="absolute -right-4 -top-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-500"></div>
+              <span className="text-5xl font-bold text-primary">$</span>
+              <span className="text-7xl font-bold font-barlow tracking-tighter">{car.price}</span>
+              <span className="text-xl font-medium text-gray-400 mb-2">{car.rent}</span>
             </div>
 
             <ul className="space-y-5 border-b border-gray-200 pb-5">
@@ -176,7 +176,7 @@ const CarDetails = () => {
                   <img
                     src={slide}
                     alt={`slide ${index + 1}`}
-                    className="w-full h-140 object-cover object-bottom rounded-xl"
+                    className="w-full h-64 sm:h-96 lg:h-140 object-contain rounded-xl bg-gray-light/30"
                   />
                 </SplideSlide>
               ))}
@@ -329,91 +329,143 @@ const CarDetails = () => {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 px-4">
-          <div className="relative bg-black w-full max-w-3xl p-8 rounded-2xl">
+        <div className="fixed inset-0 flex items-center justify-center z-[100] px-4 animate-in fade-in duration-300">
+          <div 
+            className="absolute inset-0 bg-black/60 backdrop-blur-md"
+            onClick={() => setShowModal(false)}
+          ></div>
+          
+          <div className="relative bg-[#111] border border-white/10 w-full max-w-4xl p-8 lg:p-12 rounded-[2rem] shadow-2xl overflow-hidden">
+            {/* Background Accent */}
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-[100px]"></div>
+            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
+
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 bg-white text-black w-10 h-10 rounded-full flex items-center justify-center cursor-pointer z-0"
+              className="absolute top-6 right-6 bg-white/5 hover:bg-white/10 text-white w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 border border-white/10"
             >
-              <X />
+              <X size={24} />
             </button>
 
-            <h2 className="heading-1 text-white mb-5">
-              Reserve your vehicle today!
-            </h2>
+            <div className="relative z-10">
+              <span className="sub-title text-primary mb-4 block">Reservation</span>
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 uppercase tracking-tight">
+                Secure Your <span className="text-primary">{car.name}</span>
+              </h2>
+              <p className="text-gray-400 text-lg mb-10 max-w-xl">
+                Experience the pinnacle of luxury. Complete the details below and our team will prepare your vehicle for arrival.
+              </p>
 
-            <p className="text-desc text-gray-light mb-10">
-              Fill out the form below to reserve your vehicle
-            </p>
+              <form className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs uppercase font-bold text-gray-500 tracking-widest ml-1">Full Name</label>
+                    <input
+                      type="text"
+                      placeholder="John Doe"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white outline-none focus:border-primary/50 transition-all placeholder:text-gray-600"
+                      required
+                    />
+                  </div>
 
-            <form className="grid-col lg:space-y-12 space-y-10">
-              <div className="grid-col lg:grid-cols-3 gap-5">
-                <input
-                  type="text"
-                  placeholder="Enter Full Name"
-                  className="border-b outline-none border-white text-white pb-2 focus:border-primary"
-                  required
-                />
+                  <div className="space-y-2">
+                    <label className="text-xs uppercase font-bold text-gray-500 tracking-widest ml-1">Email Address</label>
+                    <input
+                      type="email"
+                      placeholder="john@example.com"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white outline-none focus:border-primary/50 transition-all placeholder:text-gray-600"
+                      required
+                    />
+                  </div>
 
-                <input
-                  type="email"
-                  placeholder="Enter your Email"
-                  className="border-b outline-none border-white text-white pb-2 focus:border-primary"
-                  required
-                />
+                  <div className="space-y-2">
+                    <label className="text-xs uppercase font-bold text-gray-500 tracking-widest ml-1">Phone Number</label>
+                    <input
+                      type="tel"
+                      placeholder="+1 (555) 000-0000"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white outline-none focus:border-primary/50 transition-all placeholder:text-gray-600"
+                      required
+                    />
+                  </div>
+                </div>
 
-                <input
-                  type="number"
-                  placeholder="Enter your Phone"
-                  className="border-b outline-none border-white text-white pb-2 focus:border-primary"
-                  required
-                />
-              </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white/5 p-4 rounded-2xl border border-white/5">
+                    <div className="space-y-2">
+                      <label className="text-xs uppercase font-bold text-gray-500 tracking-widest ml-1">Pick Up</label>
+                      <select className="w-full bg-transparent border-none text-white outline-none cursor-pointer capitalize">
+                        <option className="bg-[#111]">Location</option>
+                        <option className="bg-[#111]">Abu Dhabi</option>
+                        <option className="bg-[#111]">London</option>
+                        <option className="bg-[#111]">Sharjah</option>
+                        <option className="bg-[#111]">Paris</option>
+                        <option className="bg-[#111]">Berlin</option>
+                        <option className="bg-[#111]">New York</option>
+                      </select>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs uppercase font-bold text-gray-500 tracking-widest ml-1">Date</label>
+                      <input
+                        type="date"
+                        className="w-full bg-transparent border-none text-white outline-none cursor-pointer scheme-dark"
+                      />
+                    </div>
+                  </div>
 
-              <div className="grid-col lg:grid-cols-2 gap-5">
-                <select className="border-b outline-none border-white bg-black capitalize text-white pb-2 focus:border-primary">
-                  <option selected>Pick Up Location</option>
-                  <option selected>Abu Dhabi</option>
-                  <option selected>London</option>
-                  <option selected>Sharjah</option>
-                  <option selected>Paris</option>
-                  <option selected>Berlin</option>
-                  <option selected>New York</option>
-                </select>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white/5 p-4 rounded-2xl border border-white/5">
+                    <div className="space-y-2">
+                      <label className="text-xs uppercase font-bold text-gray-500 tracking-widest ml-1">Drop Off</label>
+                      <select className="w-full bg-transparent border-none text-white outline-none cursor-pointer capitalize">
+                        <option className="bg-[#111]">Location</option>
+                        <option className="bg-[#111]">Abu Dhabi</option>
+                        <option className="bg-[#111]">London</option>
+                        <option className="bg-[#111]">Sharjah</option>
+                        <option className="bg-[#111]">Paris</option>
+                        <option className="bg-[#111]">Berlin</option>
+                        <option className="bg-[#111]">New York</option>
+                      </select>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs uppercase font-bold text-gray-500 tracking-widest ml-1">Date</label>
+                      <input
+                        type="date"
+                        className="w-full bg-transparent border-none text-white outline-none cursor-pointer scheme-dark"
+                      />
+                    </div>
+                  </div>
+                </div>
 
-                <input
-                  type="date"
-                  className="scheme-white [&::-webkit-calendar-picker-indicator]:invert border-b-rose-50 outline-none border-white text-white pb-2 focus:border-primary"
-                />
-              </div>
+                <div className="space-y-2">
+                  <label className="text-xs uppercase font-bold text-gray-500 tracking-widest ml-1">Special Requirements</label>
+                  <textarea
+                    placeholder="Tell us any special requests (e.g., GPS, child seat...)"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white outline-none focus:border-primary/50 transition-all placeholder:text-gray-600 h-24 resize-none"
+                  />
+                </div>
 
-              <div className="grid-col lg:grid-cols-2 gap-5">
-                <select className="border-b outline-none border-white bg-black capitalize text-white pb-2 focus:border-primary">
-                  <option selected>Drop Off Location</option>
-                  <option selected>Abu Dhabi</option>
-                  <option selected>London</option>
-                  <option selected>Sharjah</option>
-                  <option selected>Paris</option>
-                  <option selected>Berlin</option>
-                  <option selected>New York</option>
-                </select>
-
-                <input
-                  type="date"
-                  className="scheme-white [&::-webkit-calendar-picker-indicator]:invert border-b-rose-50 outline-none border-white text-white pb-2 focus:border-primary"
-                />
-              </div>
-
-              <textarea
-                placeholder="Write Your Message"
-                className="border-b outline-none border-white bg-black capitalize text-white pb-2 focus:border-primary h-28"
-              />
-
-              <Button
-                text="Book Now"
-                className="btn-white mt-10"
-              />
-            </form>
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-4 border-t border-white/5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary">
+                      <Check size={24} />
+                    </div>
+                    <div>
+                      <p className="text-white font-bold uppercase tracking-wider">Estimated Total</p>
+                      <p className="text-gray-500 text-sm">Including all taxes and fees</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-8">
+                    <div className="text-right">
+                      <span className="text-3xl font-bold text-white">${car.price}</span>
+                      <span className="text-gray-500 ml-1">/ day</span>
+                    </div>
+                    <Button
+                      text="Confirm Booking"
+                      className="btn-yellow !mt-0 px-10 py-4 h-auto"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       )}
