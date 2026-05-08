@@ -162,6 +162,26 @@ const Contact = () => {
           />
         </form>
       </div>
+
+      <div className='bg-gray-light'>
+        <div className='iframe section py-[8%] relative space-y-10'>
+          <div className='text-black w-full relative gap-8'>
+            <div className='main-title gap-3 text-center content-col'>
+              <span className='sub-title' data-aos="fade-up" data-aos-delay="400">Location</span>
+              <h2 className='heading-1 max-w-140 mx-auto' data-aos="fade-up" data-aos-delay="500">How to reach our location</h2>
+            </div>
+          </div>
+
+          <div className='iframe h-10 lg:h-150 rounded-4xl w-full overflow-hidden' data-aos="fade-center" data-aos-delay="500">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232559.02673210207!2d-3.844343464188269!3d40.438098610297125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid!5e1!3m2!1ses!2ses!4v1778252006332!5m2!1ses!2ses"
+              width="100%"
+              height="100%"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
