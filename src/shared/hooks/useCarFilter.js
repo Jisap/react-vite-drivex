@@ -1,11 +1,23 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const useCarFilter = (cars) => {
+  const [searchParams] = useSearchParams();
+  const initialType = searchParams.get("type");
+
   const [search, setSearch] = useState("");                  // Lo que el usuario escribe en el input
-  const [selectedTypes, setSelectedTypes] = useState([]);    // Una lista (array) de las categorías que el usuario ha marcado en los checkboxes.
-  const [appliedType, setAppliedType] = useState([]);        // Los filtros que realmente se están aplicando a la lista (se actualizan cuando llamas a handleSearch)
+  const [selectedTypes, setSelectedTypes] = useState(initialType ? [initialType] : []);    // Una lista (array) de las categorías que el usuario ha marcado en los checkboxes.
+  const [appliedType, setAppliedType] = useState(initialType ? [initialType] : []);        // Los filtros que realmente se están aplicando a la lista (se actualizan cuando llamas a handleSearch)
   const [currentPage, setCurrentPage] = useState(1);         // Para saber en qué página de resultados estamos.
   const carsPerPage = 6;
+
+  useEffect(() => {
+    if (initialType) {
+      setSelectedTypes([initialType]);
+      setAppliedType([initialType]);
+      setCurrentPage(1);
+    }
+  }, [initialType]);
 
   const handleCheckBox = (type) => {                         // Agrega o quita una categoría de la lista de seleccionados.
     setSelectedTypes((prev) =>

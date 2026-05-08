@@ -21,7 +21,7 @@ const CarType = () => {
       <div className='grid-col md:grid-cols-2 xl:grid-cols-3 gap-10 section relative py-[8%]'>
         {[
           { img: serviceImg1, title: "Sport Car" },
-          { img: serviceImg2, title: "Convertible" },
+          { img: serviceImg2, title: "Convertible Car" },
           { img: serviceImg3, title: "Sedan Car" },
           { img: serviceImg4, title: "Luxury Car" },
           { img: serviceImg5, title: "Electric Car" },
