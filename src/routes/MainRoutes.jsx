@@ -15,6 +15,8 @@ import Faqs from '../features/home/pages/Faqs';
 import Cars from '../features/home/pages/Cars';
 import CarDetails from '../features/home/pages/CarDetails';
 import CarType from '../features/home/pages/CarType';
+import Contact from '../features/home/pages/Contact';
+
 
 
 
@@ -51,6 +53,7 @@ const MainRoutes = () => {
       <Route path="/cars" element={<Cars />} />
       <Route path="/cars/:id" element={<CarDetails />} />
       <Route path="/carstype" element={<CarType />} />
+      <Route path="/contact" element={<Contact />} />
     </Routes>
   )
 }
