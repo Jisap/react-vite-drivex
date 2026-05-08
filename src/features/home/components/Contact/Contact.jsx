@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <>
       <section
-        className='contact bg-no-repeat bg-cover bg-center h-200 py-[8%] mt-8 relative'
+        className='contact bg-no-repeat bg-cover bg-center h-200 py-[8%] relative'
         style={{ backgroundImage: `url(${contactBgImg})` }}
       >
         <div className='absolute right-0 top-0 flex justify-center lg:justify-end items-center w-full h-full lg:mx-10 px-4'>
