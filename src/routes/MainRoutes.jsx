@@ -50,7 +50,7 @@ const MainRoutes = () => {
       <Route path="/faqs" element={<Faqs />} />
       <Route path="/cars" element={<Cars />} />
       <Route path="/cars/:id" element={<CarDetails />} />
-      <Route path="/cartype" element={<CarType />} />
+      <Route path="/carstype" element={<CarType />} />
     </Routes>
   )
 }
